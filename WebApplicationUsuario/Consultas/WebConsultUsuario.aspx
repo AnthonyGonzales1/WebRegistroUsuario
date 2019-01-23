@@ -14,15 +14,13 @@
                 <asp:ListItem>Email</asp:ListItem>
                 <asp:ListItem>Nombres</asp:ListItem>
             </asp:DropDownList>
+            <asp:Button ID="ButtonBuscar" runat="server" ForeColor="#006666" Text="Buscar" />
         </div>
         <%--Criterio--%>
         <div class="form-group col-md-3">
             Criterio<asp:TextBox ID="tCriterio" AutoCompleteType="Disabled" class="form-control input-group" runat="server"></asp:TextBox>
         </div>
         <div class="col-lg-1 p-0">
-            <button class="btn btn-success" type="button">
-                Buscar
-            </button>
         </div>
     </div>
     <%--GRID--%>

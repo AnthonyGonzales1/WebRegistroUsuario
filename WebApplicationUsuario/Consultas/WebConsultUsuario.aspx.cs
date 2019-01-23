@@ -5,10 +5,13 @@ using System.Linq.Expressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BLL;
+using Entities;
+using DAL;
 
 namespace WebApplicationUsuario.Consultas
 {
-    public partial class CUsuarioWF : System.Web.UI.Page
+    public partial class WebConsultUsuario : System.Web.UI.Page
     {
         Expression<Func<Usuario, bool>> filtro = p => true;
         Repositorio<Usuario> repositorio = new Repositorio<Usuario>();
@@ -33,22 +36,22 @@ namespace WebApplicationUsuario.Consultas
 
             switch (FiltroDropDownList.SelectedIndex)
             {
-                case 0://Todo
+                case 0:
                     break;
 
-                case 1://UsuarioId
-                    id = ToInt(CriterioTextBox.Text);
+                case 1:
+                    id = ToInt(tCriterio.Text);
                     filtro = p => p.UsuarioId == id;
                     break;
 
-                case 2://Nombre
-                    filtro = p => p.Nombres.Contains(CriterioTextBox.Text);
+                case 2:
+                    filtro = p => p.Nombres.Contains(tCriterio.Text);
                     break;
-                case 3://Email
-                    filtro = p => p.Email.Contains(CriterioTextBox.Text);
+
+                case 3:
+                    filtro = p => p.Email.Contains(tCriterio.Text);
                     break;
             }
-
             listUsuarios = repositorio.GetList(filtro);
             UsuarioGridView.DataSource = listUsuarios;
             UsuarioGridView.DataBind();
@@ -56,7 +59,7 @@ namespace WebApplicationUsuario.Consultas
 
         public static List<Usuario> RetornarUsuarios()
         {
-            return listUsuarios;
+            return Usuarios;
         }
     }
 }

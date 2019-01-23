@@ -6,9 +6,8 @@
     <h1 style="margin-left: 17px">Registro Usuarios </h1>
         <div class="col-md-6 col md-offset-3">
             <div class="form-group">
-                <label for="exampleInputID1">Usuario ID</label>&nbsp;
-        <button type="button" class="btn btn-success">Buscar</button>
-                &nbsp;<input type="email" class="form-control" id="tUsuarioID" aria-describedby="IdHelp" placeholder="Usuario ID">&nbsp;
+                <label for="exampleInputID1">Usuario ID</label>&nbsp;&nbsp;<asp:Button ID="ButtonBuscar" runat="server" ForeColor="#006666" OnClick="Button1_Click" Text="Buscar" />
+                <input type="email" class="form-control" id="tUsuarioID" aria-describedby="IdHelp" placeholder="Usuario ID">&nbsp;
                     
                             <label for="exampleInputEmail1">Nombres</label>
                             <input type="email" class="form-control" id="tNombre" aria-describedby="emailHelp" placeholder="Nombres">&nbsp;
@@ -24,10 +23,10 @@
                                             </div>  
             </div>  
     <p>
+        <asp:Button ID="ButtonNuevo" runat="server" ForeColor="#006666" OnClick="Button2_Click" Text="Nuevo" />
+        <asp:Button ID="ButtonGuardar" runat="server" ForeColor="#006666" OnClick="Button3_Click" Text="Guardar" />
+        <asp:Button ID="ButtonEliminar" runat="server" ForeColor="#006666" OnClick="Button4_Click" Text="Eliminar" />
         <br>
-        <button type="button" class="btn btn-success">Nuevo</button>
-        <button type="button" class="btn btn-success">Guardar</button>
-        <button type="button" class="btn btn-success">Eliminar</button>
     
     </p>
 </asp:Content>
